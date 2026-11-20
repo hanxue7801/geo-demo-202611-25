@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中学地理 3D 虚拟互动教学系统 · 大会学术交流专版</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 select-none">
+  <div id="main-app" class="max-w-3xl w-full bg-slate-900/90 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
+    <div class="text-center space-y-2">
+      <div class="inline-block p-3 rounded-2xl bg-amber-500/20 text-amber-400 text-3xl mb-2">🔭 🌍</div>
+      <h1 class="text-2xl md:text-3xl font-black text-white">中学地理 3D 虚拟互动教学系统</h1>
+      <p class="text-slate-400 text-sm">大会交流与公开课演示专版 · 点击下方模块直接进入交互引擎</p>
+    </div>
+
+    <!-- 演示专版状态栏（免密直通 + 定时安全锁） -->
+    <div id="demo-status-bar" class="bg-slate-950/80 border border-emerald-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">✅</span>
+        <div>
+          <div class="font-bold text-sm text-emerald-400">大会现场演示授权已激活（免密直通模式）</div>
+          <div class="text-xs text-slate-400 font-mono">主讲人专版 · 有效期至：2026年11月25日 18:00</div>
+        </div>
+      </div>
+      <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-xs font-bold">
+        PPT 内嵌就绪
+      </span>
+    </div>
+
+    <!-- 课件矩阵导航 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- 课件 1: 太阳视运动 -->
+      <a href="solar_trajectory/index.html" class="group bg-gradient-to-b from-slate-800/80 to-slate-900 border border-slate-700/80 hover:border-amber-500/80 rounded-2xl p-5 transition transform hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl">☀️</span>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">教学高频</span>
+          </div>
+          <h2 class="text-lg font-black text-white group-hover:text-amber-300 transition">太阳视运动规律与全球联动观测台</h2>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            地面地平天球视界 · 太阳直射联动 · 漠河/北京/上海/广州/曾母暗沙典型纬度日轨变化 · 日影朝向与长短演变。
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-amber-400">
+          <span>免密直接进入观测台</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- 课件 2: 地球自转公转 -->
+      <a href="earth_revolution/index.html" class="group bg-gradient-to-b from-slate-800/80 to-slate-900 border border-slate-700/80 hover:border-cyan-500/80 rounded-2xl p-5 transition transform hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl">🌍</span>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">核心双引擎</span>
+          </div>
+          <h2 class="text-lg font-black text-white group-hover:text-cyan-300 transition">地球运动3D物理引擎</h2>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            自转与公转双核心 · 立体加厚红赤道 · 超显眼高亮二分二至按键 · 地轴平行永指北极星 · 太阳直射点动态追踪。
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-cyan-400">
+          <span>免密直接进入物理引擎</span>
+          <span>→</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- 底部版权声明 -->
+    <div class="text-center text-[11px] text-slate-500 space-y-1">
+      <p>地理教学虚拟仿真实验项目组 · 大会展示专用保护版本</p>
+      <p>本版本已配置时间锁保护机制，过期后将自动锁定，严禁拷贝传播或反编译</p>
+    </div>
+  </div>
+
+  <!-- 过期锁定遮罩 -->
+  <div id="expired-overlay" class="fixed inset-0 bg-slate-950/98 backdrop-blur-xl z-50 hidden items-center justify-center p-4">
+    <div class="max-w-md w-full bg-slate-900 border border-red-500/40 rounded-3xl p-8 text-center shadow-2xl space-y-4">
+      <div class="w-16 h-16 rounded-2xl bg-red-500/15 border border-red-500/30 flex items-center justify-center text-3xl mx-auto">
+        ⏳
+      </div>
+      <h2 class="text-xl font-black text-white">演示授权已到期自动锁定</h2>
+      <p class="text-xs text-slate-400 leading-relaxed">
+        本大会交流演示专版课件有效期已于 <span class="text-amber-400 font-bold">2026年11月25日 18:00</span> 截止。<br>
+        为保护原创教学知识产权，系统已自动停止运行。
+      </p>
+      <div class="pt-2 border-t border-slate-800 text-[11px] text-slate-500">
+        如需继续使用或获取正式版授权，请联系原开发教师。
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    document.addEventListener('contextmenu', e => e.preventDefault(), true);
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83))) {
+        e.preventDefault();
+      }
+    }, true);
+
+    const EXPIRY_TIMESTAMP = 1795600800000; // 2026-11-25 18:00:00 UTC+8
+    if (Date.now() > EXPIRY_TIMESTAMP) {
+      document.getElementById('main-app').remove();
+      const overlay = document.getElementById('expired-overlay');
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+    }
+  })();
+  </script>
+</body>
+</html>
